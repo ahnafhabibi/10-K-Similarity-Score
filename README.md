@@ -17,6 +17,15 @@ According to Cohen, Lauren and Malloy, Christopher J. and Nguyen, Quoc, Lazy Pri
 
 ## Details of the Algorithm
 
+The Algorithm is inspired from the BertScore Research paper (Zhang, Kishore, Wu, Weinberger, & Artzi, 2020) [3]. However, there are major differences in particular we are implementing this for sentences rather than words as done in the BertScore research paper. We highlight our algorithm below:
+Given two large documents,
+1) We create two lists of sentences for each documents i.e sentence_lst_1 and sentence_lst_2.
+2) From these two lists, we calculate their cosine similarity tensor embeddings from Sbert models [4].
+3) Finally, we take the mean of the max of each row and the mean of the max of each column.
+4) Our similarity score is the harmonic mean which we call it the f1-score similar to the BertScore paper [3].
+
+
+
 
 ## Data Analysis
 
@@ -36,4 +45,8 @@ According to Cohen, Lauren and Malloy, Christopher J. and Nguyen, Quoc, Lazy Pri
 [1] Cohen, Lauren and Malloy, Christopher J. and Nguyen, Quoc, Lazy Prices (March 7, 2019). 2019 Academic Research Colloquium for Financial Planning and Related Disciplines, Available at SSRN: https://ssrn.com/abstract=1658471 or http://dx.doi.org/10.2139/ssrn.1658471
 
 [2] Lohding, J. (n.d.). jlohding/sp500-edgar-10k. Hugging Face. Retrieved [July 1, 2024], from https://huggingface.co/jlohding/sp500-edgar-10k
+
+[3] Zhang, T., Kishore, V., Wu, F., Weinberger, K. Q., & Artzi, Y. (2020). BERTScore: Evaluating Text Generation with BERT. Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, 93-104.
+
+[4] Reimers, N., & Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics. Retrieved from https://arxiv.org/abs/1908.10084
 
