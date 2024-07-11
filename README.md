@@ -24,8 +24,9 @@ Given two large documents,
 3) Finally, we take the mean of the max of each row and the mean of the max of each column.
 4) Our similarity score is the harmonic mean which we call it the f1-score similar to the BertScore paper [3].
 
-![alt text](https://github.com/ahnafhabibi/10-K-Similarity-Score/blob/main/similarity_score_example.png)
+![Similarity Matrix](https://github.com/ahnafhabibi/10-K-Similarity-Score/blob/main/similarity_score_example.png)
 
+From the Similarity Matrix above, we consider the mean of the max of each row and column. Then take a weighted average of them in particular the harmonic mean.
 
 ## Data Analysis
 
