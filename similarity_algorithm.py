@@ -13,6 +13,7 @@ class SimilarityScoreAlgo:
     Example usage:
         sentences1 = ["I love coding.", "Python is awesome."]
         sentences2 = ["Coding is fun.", "I enjoy Python programming."]
+        model=SentenceTransformer("all-MiniLM-L6-v2")
         similarity_calculator = SimilarityScoreAlgo("all-MiniLM-L6-v2", sentences1, sentences2)
         embeddings1, embeddings2 = similarity_calculator.encode_sentences()
         similarity_matrix = similarity_calculator.get_similarity_score(embeddings1, embeddings2)
@@ -21,7 +22,7 @@ class SimilarityScoreAlgo:
         print(f"F1 score: {f1}")
     """
 
-    def __init__(self, model_type, sentences_1, sentences_2) -> None:
+    def __init__(self, model, sentences_1, sentences_2) -> None:
         """
         Initializes the SimilarityScoreAlgo instance with a Sentence Transformer model and two sets of sentences.
 
@@ -30,7 +31,7 @@ class SimilarityScoreAlgo:
             sentences_1 (list): List of sentences or texts for the first set.
             sentences_2 (list): List of sentences or texts for the second set.
         """
-        self.model = SentenceTransformer(model_type)
+        self.model = model
         self.sentences_1 = sentences_1
         self.sentences_2 = sentences_2
 
